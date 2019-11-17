@@ -15,9 +15,7 @@ driver = webdriver.Chrome(options=options)
 
 def compare():
     if driver.current_url == row[1]:
-        print("Redir ok at line: " + str(line_count))
-        print("Base URL in " + str(line_count) + ": " + row[0])
-        print("Redirected URL in " + str(line_count) + ": " + row[1])
+        print(colored("Redir OK at line: " + str(line_count), "blue"))
     else:
         file = open("errors.log", "a")
         file.write("*******************" + "\n" +
@@ -33,12 +31,11 @@ with open('redirs.txt') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 1
     for row in csv_reader:
-        driver.implicitly_wait(1)
         driver.get(row[0])
         driver.implicitly_wait(1)
         compare()
         line_count += 1
-    print(f'Processed {line_count} lines.')
+    print(colored(f'Processed {line_count} lines.', 'green', attrs=['bold']))
 
 end_time = time.time()
 

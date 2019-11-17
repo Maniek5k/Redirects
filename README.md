@@ -1,8 +1,8 @@
 ##REDIRECTS TESTING TOOL   
 
-This is 301 redirects testing tool, for general testing purpose after new site released live.
+This is 301 redirects testing tool, for general testing purpose.
 
-This tool supports CSV file type, as most popular
+This tool supports CSV file type, as most popular.
 
 How it works:
 - in redirects.py file we can setup which file should be opened:
